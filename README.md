@@ -26,7 +26,7 @@ The Text Extractor Plugin allows you to extract text and metadata from multiple 
 
 ## Usage
 
-1. **Manually** upload your sample file into Joget server `wflow/app_tempfile` folder which name must be either:
+1. **Manually** upload below sample files from `text-extractor-plugin/src/main/resources/example-files` folder into Joget server `wflow/app_tempfile` folder:
     - example.pdf
     - example.xlsx
     - example.docx
