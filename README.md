@@ -20,20 +20,23 @@ The Text Extractor Plugin allows you to extract text and metadata from multiple 
 
 ## Installation
 
-1. Build the plugin:
-   ```bash
-   mvn clean install
-   ```
+1. Build the plugin: `mvn clean install`.
 
 2. Upload the generated JAR file into your Joget.
 
 ## Usage
 
-The plugin extracts text content and metadata from uploaded files and logs the results at **System Logs**. 
+1. Manually upload your sample file into `wflow/app_tempfile` folder which name must be exactly `example_document.pdf`. Required file path is `wflow/app_tempfile/example_document.pdf` in your Joget server.
+
+2. Create a new **Tool** in **Process Builder**, choose **Text Extractor Plugin** in the **Tools** options.
+
+3. Save changes then **Run Process**.
+
+4. Check the extracted text content and metadata at **System Logs**.
 
 ## Warning: Current Implementation
 
-The plugin processes a sample file (`example_document.pdf`) that **MUST** be manually uploaded to the `wflow/app_tempfile` folder in your Joget server.
+The plugin requires a sample file (`example_document.pdf`) that **MUST** be manually uploaded to the `wflow/app_tempfile` folder in your Joget server.
 
 ## Way forward
 
