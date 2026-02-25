@@ -26,17 +26,19 @@ The Text Extractor Plugin allows you to extract text and metadata from multiple 
 
 ## Usage
 
-1. Manually upload your sample file into `wflow/app_tempfile` folder which name must be exactly `example_document.pdf`. Required file path is `wflow/app_tempfile/example_document.pdf` in your Joget server.
+1. **Manually** upload your sample file into Joget server `wflow/app_tempfile` folder which name must be either:
+    - example.pdf
+    - example.xlsx
+    - example.docx
+    - example.pptx
+    - example.jpg
+    - example.png
 
 2. Create a new **Tool** in **Process Builder**, choose **Text Extractor Plugin** in the **Tools** options.
 
 3. Save changes then **Run Process**.
 
 4. Check the extracted text content and metadata at **System Logs**.
-
-## Warning: Current Implementation
-
-The plugin requires a sample file (`example_document.pdf`) that **MUST** be manually uploaded to the `wflow/app_tempfile` folder in your Joget server.
 
 ## Way forward
 

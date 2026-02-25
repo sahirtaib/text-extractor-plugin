@@ -42,13 +42,37 @@ public class TextExtractorPlugin extends DefaultApplicationPlugin {
 
     @Override
     public final Object execute(Map props) {
-        // TODO: get file uploaded via properties
+        // TODO: get file uploaded into app resources via properties
         // LogUtil.info("File: ", getPropertyString("file"));
 
         // WARNING: must upload file manually into wflow/app_tempfile folder with exact file name as below
-        File file = FileManager.getFileByPath("example_document.pdf");
+        String[] filePaths = {
+            "example.pdf",
+            "example.xlsx",
+            "example.docx",
+            "example.pptx",
+            // WARNING: for images, make sure to install package. example: `apt install tesseract-ocr`
+            "example.jpg",
+            "example.png",
+        };
 
-        // Start extracting text using Apache Tika
+        for (String path : filePaths) {
+            File file = FileManager.getFileByPath(path);
+
+            if (!file.exists()) {
+                LogUtil.warn("File not found", path);
+                continue;
+            }
+            
+            extractText(file);
+        }
+
+        return null;
+    }
+
+    private void extractText(File file) {
+        LogUtil.info("Attempting to extract text from file", file.getName());
+
         BodyContentHandler handler = new BodyContentHandler(-1);
         Metadata metadata = new Metadata();
         AutoDetectParser parser = new AutoDetectParser();
@@ -57,15 +81,13 @@ public class TextExtractorPlugin extends DefaultApplicationPlugin {
             parser.parse(stream, handler, metadata);
             
             for (String name : metadata.names()) {
-                LogUtil.info("Metadata: " + name, metadata.get(name));
+                LogUtil.info("Metadata" + name, metadata.get(name));
             }
 
-            LogUtil.info("Contents:", handler.toString());
+            LogUtil.info("Contents", handler.toString());
             
         } catch (Exception e) {
             LogUtil.error(getClass().getName(), e, "Failed to extract text from file");
         }
-
-        return null;
     }
 }
