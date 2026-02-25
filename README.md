@@ -17,6 +17,7 @@ The Text Extractor Plugin allows you to extract text and metadata from multiple 
 
 - Joget DX 8.2.0 or higher
 - Java 11+
+- [Tesseract OCR](https://tesseract-ocr.github.io/tessdoc/Installation.html)
 
 ## Installation
 
@@ -42,8 +43,8 @@ The Text Extractor Plugin allows you to extract text and metadata from multiple 
 
 ## Way forward
 
-Should use file upload feature instead of manual upload `example_document.pdf`.
-Extend plugin for form element.
+- Should use file upload feature instead of manual uploading sample files.
+- Extend plugin as a form element.
 
 ## License
 
