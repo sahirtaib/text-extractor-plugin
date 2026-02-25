@@ -1,0 +1,11 @@
+[{
+    "title": "Text Extractor Settings",
+    "properties": [{
+        "name": "file",
+        "label": "File",
+        "type": "file",
+        "appPath": "[APP_PATH]",
+        "allowInput": "true",
+        "isPublic" : "true"
+    }]
+}]
